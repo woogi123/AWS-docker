@@ -34,7 +34,7 @@ jobs:
       run: mvn clean install -Dmaven.test.skip=true
 
     - name: Build & push Docker image
-       uses: mr-smithers-excellent/docker-build-push@v6
+      uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: ${{secrets.DOCKER_USERNAME}}/$DOCKER_IMAGE
         tags: $DOCKER_TAG
@@ -42,3 +42,4 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+
